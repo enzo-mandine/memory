@@ -1,0 +1,44 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+}
+
+.face {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.back {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: unset;
+}
+
+#grid {
+    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
