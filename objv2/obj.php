@@ -12,9 +12,7 @@ if (!isset($_SESSION["arrayCard"])) {
 $limitValue = $limit / 2;
 if (!isset($_SESSION["cardValue"])) {
     $rangeValue = range(1, $limitValue);
-    // shuffle($rangeValue);
-    $_SESSION["cardValue"] = $rangeValue;
-    // $_SESSION["CardShow"] = $rangeValue;
+    $_SESSION["cardValue"] = array_merge($rangeValue, $rangeValue);
 }
 
 if (isset($_POST["reset"])) {
@@ -31,7 +29,7 @@ if (isset($_POST["reset"])) {
     <meta charset="UTF-8">
     <meta name="viewport">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -43,13 +41,13 @@ if (isset($_POST["reset"])) {
         <?php
         // Génération du jeu
         if (isset($_POST["newgame"])) {
-            for ($i = 0; $i < $limitValue; $i++) {
+            for ($i = 1; $i < $limit + 1; $i++) {
                 $_SESSION["carte"][$i] = new card();
                 $_SESSION["carte"][$i]->setCard();
             }
         }
         // Affichage des cartes
-        for ($i = 0; $i < $limitValue; $i++) {
+        for ($i = 1; $i < $limit + 1; $i++) {
             $_SESSION["carte"][$i]->showCard();
         }
         ?>
@@ -57,3 +55,11 @@ if (isset($_POST["reset"])) {
 </body>
 
 </html>
+
+<?php
+for ($i = 1; $i < $limit + 1; $i++) {
+    if (isset($_POST[$i])){
+        var_dump($_SESSION["carte"][$i]);
+        $_SESSION["carte"][$i]->updateStatus();
+    }
+}

@@ -32,12 +32,23 @@ class card
         }
     }
 
+    public function updateCard()
+    {
+        if (isset($_SESSION["flippedCard"])) {
+            $i = 0;
+            while ($i < count($_SESSION["flippedCard"])) {
+                if ($this->posCarte1 == $_SESSION["flippedCard"][$i]) {
+                    echo "Match!";
+                }
+            }
+        }
+    }
+
     public function showCard()
     // Affiche les cartes
     {
-        echo "<input type='submit' value=$this->posCarte1 name=$this->value.A>";
-        echo "<input type='submit' value=$this->posCarte2 name=$this->value.B>";
-        return true;
+        echo "<input type='submit' value='$this->value' name='$this->posCarte1' class='carte$this->posCarte1'>";
+        echo "<input type='submit' value='$this->value' name='$this->posCarte2' class='carte$this->posCarte2'>";
     }
-}
 
+}
