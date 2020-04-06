@@ -1,13 +1,12 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     gap: 1rem;
 }
 
-.carte0 {
-    order: 0;
-}
-.carte1 {
+
+/* .carte1 {
     order: 1;
 }
 
@@ -98,3 +97,7 @@
 .carte23 {
     order: 23;
 }
+
+.carte24 {
+    order: 24;
+} */

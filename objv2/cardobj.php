@@ -3,12 +3,35 @@
 class card
 {
     public $value = "";
-    public $posCarte1 = "";
     public $statusCarte1 = 0;
+    // StatusCarte1 : 
+    // 0 = Dos de carte
+    // 1 = Carte visible
+    // 2 = Paire fausse
+    // 3 = Paire validée
+
+    public function status()
+    {
+        switch ($i) {
+            case 0:
+                echo "coucou";
+                break;
+            case 1:
+                echo "coucou";
+                break;
+            case 2:
+                echo "coucou";
+                break;
+            case 3:
+                echo "coucou";
+                break;
+        }
+    }
+
 
 
     public function setCard()
-    // Définit l'emplacement de la paire de carte
+    // Définit la valeure de la carte
     {
         if ($this->value == "") {
             if (isset($_SESSION["cardValue"])) {
@@ -16,24 +39,20 @@ class card
                 array_splice($_SESSION["cardValue"], 0, 1);
             }
         }
-        if ($this->posCarte1 == "") {
-            if (isset($_SESSION["arrayCard"])) {
-                $this->posCarte1 = $_SESSION["arrayCard"][0];
-                array_splice($_SESSION["arrayCard"], 0, 1);
-            }
-        }
+    }
+
+    public function getValue()
+    {
+        return $this->value;
     }
 
     public function updateStatus()
     {
-        if ($this->statusCarte1 == 0) {
-            $this->statusCarte1 = 1;
-        }
     }
 
     public function showCard()
     // Affiche les cartes
     {
-        echo "<input type='submit' value='$this->value' name='$this->value' class='carte$this->posCarte1'>";
+        echo "<input type='submit' value='$this->value' name='$this->value'>";
     }
 }

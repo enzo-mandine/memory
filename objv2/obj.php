@@ -2,13 +2,17 @@
 include("cardobj.php");
 session_start();
 
+if (!isset($_SESSION["flip"])) {
+    $_SESSION["flip"] = 0;
+}
+
 $limit = 24;
-if (!isset($_SESSION["arrayCard"])) {
+if (!isset($_SESSION["showCard"])) {
     $range = range(1, $limit);
     shuffle($range);
-    $array = $range;
-    $_SESSION["arrayCard"] = $array;
+    $_SESSION["showCard"] = $range;
 }
+
 $limitValue = $limit / 2;
 if (!isset($_SESSION["cardValue"])) {
     $rangeValue = range(1, $limitValue);
@@ -46,9 +50,9 @@ if (isset($_POST["reset"])) {
                 $_SESSION["carte"][$i]->setCard();
             }
         }
-        // Affichage des cartes
-        for ($i = 1; $i < $limit + 1; $i++) {
-            $_SESSION["carte"][$i]->showCard();
+        // Affichage des cartes mélangées
+        foreach ($_SESSION["showCard"] as $key => $value) {
+            $_SESSION["carte"][$value]->showCard();
         }
         ?>
     </form>
@@ -58,8 +62,13 @@ if (isset($_POST["reset"])) {
 
 <?php
 for ($i = 1; $i < $limit + 1; $i++) {
-    if (isset($_POST[$i])){
+    if (isset($_POST[$i])) {
+        $_SESSION["flip"]++;
+        $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->getValue();
         var_dump($_SESSION["carte"][$i]);
-        $_SESSION["carte"][$i]->updateStatus();
+        var_dump($_SESSION["flippedCard"]);
+        var_dump($_SESSION["flip"]);
     }
 }
+
+// var_dump($_SESSION);
