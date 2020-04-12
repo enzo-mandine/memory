@@ -39,20 +39,14 @@ class card
         return $this->value;
     }
 
-    public function changeStatusTo0() {
+    public function changeStatusTo0()
+    {
         $this->statusCarte1 = 0;
         return true;
     }
-    public function changeStatusTo1() {
+    public function changeStatusTo1()
+    {
         $this->statusCarte1 = 1;
-        return false;
-    }
-    public function changeStatusTo2() {
-        $this->statusCarte1 = 2;
-        return true;
-    }
-    public function changeStatusTo3() {
-        $this->statusCarte1 = 3;
         return true;
     }
 
@@ -60,20 +54,10 @@ class card
     // Affiche les cartes en fonction de $this->statusCarte1
     {
         if ($this->statusCarte1 == 0) {
-            echo "<input type='submit' value='$this->value' name='$this->objName'>dos";
-            
+            echo "<input type='submit' value='' name='$this->objName'>";
         }
         if ($this->statusCarte1 == 1) {
-            echo "<input type='submit' value='$this->value' name='$this->objName'>seule";
-            
-        }
-        if ($this->statusCarte1 == 2) {
-            echo "<input type='submit' value='$this->value' name='$this->objName'>faux";
-            
-        }
-        if ($this->statusCarte1 == 3) {
-            echo  "<input type='submit' value='$this->value' name='$this->objName'>GG";
-            
+            echo "<input type='submit' value='' name='$this->objName'>";
         }
     }
 }

@@ -30,10 +30,8 @@ main {
 }
 
 html {
-    background-image: url(../src/background.png);
-    background-repeat: no-repeat;
+    background-image: url(../src/board.jpg);
     background-size: cover;
-    background-position: center;
 }
 
 .flexr {
@@ -49,14 +47,16 @@ html {
 }
 
 .center {
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .card-back {
     user-select: none;
     width: 100px;
     height: 150px;
-    background-image: url("../src/cardback.png");
+    background-image: url("../src/cardback.gif");
     background-position: center;
     background-size: cover;
     border-style: none;
