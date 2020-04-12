@@ -54,10 +54,10 @@ class card
     // Affiche les cartes en fonction de $this->statusCarte1
     {
         if ($this->statusCarte1 == 0) {
-            echo "<input type='submit' value='' name='$this->objName'>";
+            echo "<input class='card' type='submit' style='background-image: url(../src/cardback.gif)' value='$this->value' name='$this->objName'>";
         }
         if ($this->statusCarte1 == 1) {
-            echo "<input type='submit' value='' name='$this->objName'>";
+            echo "<input class='card' type='submit' value='$this->value' name='$this->objName'>";
         }
     }
 }

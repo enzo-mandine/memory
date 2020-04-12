@@ -8,7 +8,7 @@ if (!isset($_SESSION["flip"])) {
 if (!isset($_SESSION["validatedCard"])) {
     $_SESSION["validatedCard"] = [];
 }
-$limit = 2;
+$limit = 200;
 if (!isset($_SESSION["showCard"])) {
     $range = range(1, $limit);
     shuffle($range);
@@ -29,25 +29,24 @@ if (isset($_POST["reset"])) {
 for ($i = 1; $i < $limit + 1; $i++) {
     if (isset($_POST[$i])) {
         $_SESSION["flip"]++;
-        $_SESSION["validatedCard"][] = $_SESSION["carte"][$i]->showName();
         $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->showName();
         $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->getValue();
-
-        if (count($_SESSION["flippedCard"]) < 2) {
-            $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo1();
-        }
-        
+        $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo1();
         if (count($_SESSION["flippedCard"]) > 2) {
             if ($_SESSION["flippedCard"][1] != $_SESSION["flippedCard"][3]) {
-                $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo0();
-                $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo0();
-                unset($_SESSION["flippedCard"]);
-                $_SESSION["flippedCard"] = [];
+                $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo1();
+                if (count($_SESSION["flippedCard"]) > 4) {
+                    $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo0();
+                    $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo0();
+                    $_SESSION["carte"][$_SESSION["flippedCard"][4]]->changeStatusTo1();
+                    array_splice($_SESSION["flippedCard"], 0, 4);
+                }
             } else {
                 $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo1();
                 $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo1();
-                unset($_SESSION["flippedCard"]);
-                $_SESSION["flippedCard"] = [];
+                $_SESSION["validatedCard"][] = $_SESSION["carte"][$_SESSION["flippedCard"][0]]->showName();
+                $_SESSION["validatedCard"][] = $_SESSION["carte"][$_SESSION["flippedCard"][2]]->showName();
+                array_splice($_SESSION["flippedCard"], 0, 4);
             }
         }
         header("location:obj.php");
@@ -63,7 +62,7 @@ for ($i = 1; $i < $limit + 1; $i++) {
     <meta charset="UTF-8">
     <meta name="viewport">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="src/style.css">
 </head>
 
 <body>
@@ -89,6 +88,8 @@ for ($i = 1; $i < $limit + 1; $i++) {
         }
         if (count($_SESSION["validatedCard"]) == $limit) {
             echo "GG MEC !";
+            // sleep(3);
+            // header("location:score.php");
         }
         ?>
     </form>
@@ -97,5 +98,5 @@ for ($i = 1; $i < $limit + 1; $i++) {
 </html>
 
 <?php
-
+var_dump($_SESSION);
 ?>
