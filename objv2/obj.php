@@ -12,7 +12,6 @@ if (!isset($_SESSION["showCard"])) {
     shuffle($range);
     $_SESSION["showCard"] = $range;
 }
-
 $limitValue = $limit / 2;
 if (!isset($_SESSION["cardValue"])) {
     $rangeValue = range(1, $limitValue);
@@ -22,6 +21,39 @@ if (!isset($_SESSION["cardValue"])) {
 if (isset($_POST["reset"])) {
     session_destroy();
     session_start();
+}
+
+
+for ($i = 1; $i < $limit + 1; $i++) {
+    if (isset($_POST[$i])) {
+        $_SESSION["flip"]++;
+        $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->showName();
+        $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->getValue();
+        var_dump($_SESSION["carte"][$i]);
+        var_dump($_SESSION["flippedCard"]);
+
+        if (count($_SESSION["flippedCard"]) > 2) {
+            if ($_SESSION["flippedCard"][1] != $_SESSION["flippedCard"][3]) {
+                echo "wrong";
+
+                $_SESSION["carte"][$i]->changeStatusTo0();
+                $_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]->changeStatusTo0();
+                unset($_SESSION["flippedCard"]);
+                $_SESSION["flippedCard"] = [];
+            } else {
+
+                echo "good";
+                $_SESSION["carte"][$i]->changeStatusTo3();
+                $_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]->changeStatusTo3();
+                var_dump($_SESSION["carte"][$i]);
+                var_dump($_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]);
+
+                unset($_SESSION["flippedCard"]);
+                $_SESSION["flippedCard"] = [];
+                header("location:obj.php");
+            }
+        }
+    }
 }
 ?>
 
@@ -45,8 +77,11 @@ if (isset($_POST["reset"])) {
         <?php
         // Génération du jeu
         if (isset($_POST["newgame"])) {
+            $_SESSION["flippedCard"] = [];
             for ($i = 1; $i < $limit + 1; $i++) {
                 $_SESSION["carte"][$i] = new card();
+                $name = $i;
+                $_SESSION["carte"][$i]->getName($name);
                 $_SESSION["carte"][$i]->setCard();
             }
         }
@@ -59,16 +94,3 @@ if (isset($_POST["reset"])) {
 </body>
 
 </html>
-
-<?php
-for ($i = 1; $i < $limit + 1; $i++) {
-    if (isset($_POST[$i])) {
-        $_SESSION["flip"]++;
-        $_SESSION["flippedCard"][] = $_SESSION["carte"][$i]->getValue();
-        var_dump($_SESSION["carte"][$i]);
-        var_dump($_SESSION["flippedCard"]);
-        var_dump($_SESSION["flip"]);
-    }
-}
-
-// var_dump($_SESSION);
