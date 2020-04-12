@@ -36,15 +36,15 @@ for ($i = 1; $i < $limit + 1; $i++) {
             if ($_SESSION["flippedCard"][1] != $_SESSION["flippedCard"][3]) {
                 echo "wrong";
 
-                $_SESSION["carte"][$i]->changeStatusTo0();
-                $_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]->changeStatusTo0();
+                $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo0();
+                $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo0();
                 unset($_SESSION["flippedCard"]);
                 $_SESSION["flippedCard"] = [];
             } else {
 
                 echo "good";
-                $_SESSION["carte"][$i]->changeStatusTo3();
-                $_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]->changeStatusTo3();
+                $_SESSION["carte"][$_SESSION["flippedCard"][0]]->changeStatusTo3();
+                $_SESSION["carte"][$_SESSION["flippedCard"][2]]->changeStatusTo3();
                 var_dump($_SESSION["carte"][$i]);
                 var_dump($_SESSION["carte"][$_SESSION["carte"][$i]->getValue()]);
 
