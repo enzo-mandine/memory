@@ -9,6 +9,10 @@ if (!isset($_SESSION["flip"])) {
     $_SESSION["flip"] = 0;
 }
 
+if (!isset($_SESSION["gameStart"])) {
+    $_SESSION["gameStart"] = 'stop';
+}
+
 if (!isset($_SESSION["randBg"])) {
     $range = range(1, 100);
     $nrange = array_rand($range, $limitValue);
@@ -81,7 +85,7 @@ for ($i = 1; $i < $limit + 1; $i++) {
         <form method="POST" class="grid">
             <?php
             // Génération du jeu
-            if (isset($_POST["newgame"])) {
+            if (($_SESSION["gameStart"]) == 'stop') {
                 $_SESSION["flippedCard"] = [];
                 for ($i = 1; $i < $limit + 1; $i++) {
                     $_SESSION["carte"][$i] = new card();
@@ -89,6 +93,7 @@ for ($i = 1; $i < $limit + 1; $i++) {
                     $_SESSION["carte"][$i]->getName($name);
                     $_SESSION["carte"][$i]->setCard();
                 }
+                $_SESSION["gameStart"] = 'start';
             }
             // Affichage des cartes mélangées
             foreach ($_SESSION["showCard"] as $key => $value) {
