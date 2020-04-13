@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Ma Super Fonte";
+	src: url('LHFUncialCaps.ttf');
+}
+
 body{
     margin:0;
     padding:0;
@@ -125,4 +130,14 @@ body{
     background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+.e_btn{
+    background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
+    background-color: transparent;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+    height: 4rem;
+    width: 10rem;
 }

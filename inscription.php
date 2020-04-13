@@ -41,7 +41,7 @@
             Pseudo <input class="input" type="text" name="login"/> <br/>
             Mot de passe <input class="input" type="password" name="mdp"/><br/>
 			Confirmez votre mot de passe <input class="input" type="password" name="remdp"/><br/>
-            <input class="button1" type="submit" name="envoie" value="Se connecter"/>
+            <input class="e_btn" type="submit" name="envoie" value="Se connecter"/>
 </form>
 </div>
 </div>
