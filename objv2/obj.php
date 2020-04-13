@@ -2,7 +2,7 @@
 include("cardobj.php");
 session_start();
 // Limit a remplacer par $_SESSION["limite"]
-$limit = 24;
+$limit = $_SESSION['limite'];
 $limitValue = $limit / 2;
 
 if (!isset($_SESSION["flip"])) {
