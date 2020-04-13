@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    background-image: url(../src/background.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.cardback {
+    width: 101px;
+    height: 149px;
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+}
+
+.cardback:hover {
+    box-shadow: 0px 0px 21px -1px rgba(73,150,201,1);
+    transform: scale(1.1);
+}
+
+.cardfront {
+    width: 101px;
+    height: 149px;
+    border: none;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+}
+
+.cardfront:hover {
+    transform: scale(2.5);
+}
+
+.grid {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+}
+
+.center {
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBg {
+    background-image: url(src/board.jpg);
+    background-position: center;
+    background-position-y: 31%;
+    background-size: 130%;
+}

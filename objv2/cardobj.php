@@ -5,6 +5,7 @@ class card
     public $objName = "";
     public $value = "";
     public $statusCarte1 = 0;
+    public $background = "";
 
     public function getName($name)
     {
@@ -24,6 +25,13 @@ class card
             if (isset($_SESSION["cardValue"])) {
                 $this->value = $_SESSION["cardValue"][0];
                 array_splice($_SESSION["cardValue"], 0, 1);
+            }
+        }
+
+        if ($this->background == "") {
+            if (isset($_SESSION["randBg"])) {
+                $this->background = $_SESSION["randBg"][0];
+                array_splice($_SESSION["randBg"], 0, 1);
             }
         }
     }
@@ -51,13 +59,12 @@ class card
     }
 
     public function showCard()
-    // Affiche les cartes en fonction de $this->statusCarte1
     {
         if ($this->statusCarte1 == 0) {
-            echo "<input class='card' type='submit' style='background-image: url(../src/cardback.gif)' value='$this->value' name='$this->objName'>";
+            echo "<input class='cardback' type='submit' style='background-image: url(src/cardback.gif)' value='' name='$this->objName'>";
         }
         if ($this->statusCarte1 == 1) {
-            echo "<input class='card' type='submit' value='$this->value' name='$this->objName'>";
+            echo "<div class='cardfront' style='background-image: url(src/card/$this->background.png)' name='$this->objName'></div>";
         }
     }
 }
