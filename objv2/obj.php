@@ -100,12 +100,19 @@ for ($i = 1; $i < $limit + 1; $i++) {
                 $_SESSION["carte"][$value]->showCard();
             }
             if (count($_SESSION["validatedCard"]) == $limit) {
-                echo "GG MEC !";
                 // sleep(3);
                 // header("location:score.php");
             }
             ?>
         </form>
+
+    </div>
+    <div class='victory'>
+        <img class='victory_anim' src='../images/victory.png'>
+
+        <a class="btn" href="../menu.php">
+            <h1>Retour au menu</h1>
+        </a>
     </div>
 </body>
 

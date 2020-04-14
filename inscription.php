@@ -33,7 +33,6 @@
 		}
 	}
 }
-
 ?>
 <div class='inscriptionbg'>
 <div class="inscriptionelement">
