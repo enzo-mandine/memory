@@ -2,11 +2,11 @@
 session_start();
 include 'header.php';
 $conn = mysqli_connect("localhost","root","","memory");
-$requestscore ='SELECT * FROM score ORDER BY scoretotal DESC';
+$requestscore ='SELECT * FROM score INNER JOIN utilisateurs ON score.id_utilisateur = utilisateurs.id ORDER BY scoretotal DESC';
 $sql = mysqli_query($conn,$requestscore);
 $rowscore = mysqli_fetch_all($sql);
 
-$requestnbrcartes = 'SELECT DISTINCT(nbrcartes) FROM score ORDER BY nbrcartes DESC';
+/* $requestnbrcartes = 'SELECT DISTINCT(nbrcartes) FROM score ORDER BY nbrcartes DESC';
 $sql3 = mysqli_query($conn,$requestnbrcartes);
 $rownbrcartes = mysqli_fetch_all($sql3);
 
@@ -14,7 +14,7 @@ $requestutt = 'SELECT * FROM utilisateurs';
 $sql2 = mysqli_query($conn,$requestutt);
 $rowutt = mysqli_fetch_assoc($sql2);
 $i = 0;
-$ii = 0;
+$ii = 0; */
 /* var_dump($rownbrcartes); 
 var_dump($rowscore); 
 var_dump($rowutt); 
@@ -25,7 +25,21 @@ var_dump($rownbrcartes[0][0]);  */
 <a href="menu.php"><img src="images/back.png"></a>
     <div class='scoreelement'>
 <?php
-while($i<count($rownbrcartes))
+$i=1;
+while ($i<count($rowscore))
+{
+    echo '<p> position :'.$i.'  score :  '.$rowscore[$i][4].'  uttilisateurs :  '.$rowscore[$i][7].'  date : '.$rowscore[$i][5].'</p>' ;
+    $i++;
+}
+
+
+
+
+
+
+
+
+/* while($i<count($rownbrcartes))
 {
 
     echo $rownbrcartes[$i][0];
@@ -47,6 +61,9 @@ while($i<count($rownbrcartes))
     }
     $i = $i+1;
 }
-
+ */
 ?>
     </div></div>
+    <?php
+include 'footer.php'
+?>
