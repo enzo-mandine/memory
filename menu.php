@@ -3,6 +3,7 @@
 session_start();
 include 'header.php';
 echo '<div class="menu">';
+echo '<img class="logo" src="images/logo.png">';
 echo '<div class="liensmenu">';
 
 if (isset($_SESSION["login"]))
