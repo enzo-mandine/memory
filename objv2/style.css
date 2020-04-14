@@ -36,7 +36,8 @@
 }
 
 .grid {
-    padding-top: 10rem;
+    width: fit-content;
+    padding-top: 12rem;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
@@ -55,4 +56,30 @@
     background-position: center;
     background-position-y: 31%;
     background-size: 130%;
+}
+
+.victory {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+@keyframes victory {
+        0% {height: 100px;}
+        100% {height: 800px;}
+}
+
+.victory_anim {
+    height: 800px;
+    animation: victory 1.5s;
+}
+
+.game_btn{
+
 }

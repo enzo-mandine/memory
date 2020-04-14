@@ -32,12 +32,6 @@ if (!isset($_SESSION["cardValue"])) {
     $_SESSION["cardValue"] = array_merge($rangeValue, $rangeValue);
 }
 
-if (isset($_POST["reset"])) {
-    session_destroy();
-    session_start();
-}
-
-
 for ($i = 1; $i < $limit + 1; $i++) {
     if (isset($_POST[$i])) {
         $_SESSION["flip"]++;
@@ -79,35 +73,39 @@ for ($i = 1; $i < $limit + 1; $i++) {
 
 <body class="gameBg">
     <div class="center">
-        <form action="" method="POST">
-            <input type="submit" name="newgame" value="New Game">
-            <input type="submit" class="" value="reset" name="reset">
-        </form>
         <form method="POST" class="grid">
-            <?php
-            // Génération du jeu
-            if (($_SESSION["gameStart"]) == 'stop') {
-                $_SESSION["flippedCard"] = [];
-                for ($i = 1; $i < $limit + 1; $i++) {
-                    $_SESSION["carte"][$i] = new card();
-                    $name = $i;
-                    $_SESSION["carte"][$i]->getName($name);
-                    $_SESSION["carte"][$i]->setCard();
+                <?php
+                // Génération du jeu
+                if (($_SESSION["gameStart"]) == 'stop') {
+                    $_SESSION["flippedCard"] = [];
+                    for ($i = 1; $i < $limit + 1; $i++) {
+                        $_SESSION["carte"][$i] = new card();
+                        $name = $i;
+                        $_SESSION["carte"][$i]->getName($name);
+                        $_SESSION["carte"][$i]->setCard();
+                    }
+                    $_SESSION["gameStart"] = 'start';
                 }
-                $_SESSION["gameStart"] = 'start';
-            }
-            // Affichage des cartes mélangées
-            foreach ($_SESSION["showCard"] as $key => $value) {
-                $_SESSION["carte"][$value]->showCard();
-            }
-            if (count($_SESSION["validatedCard"]) == $limit) {
-                echo "GG MEC !";
-                // sleep(3);
-                // header("location:score.php");
-            }
-            ?>
-        </form>
-    </div>
+                // Affichage des cartes mélangées
+                foreach ($_SESSION["showCard"] as $key => $value) {
+                    $_SESSION["carte"][$value]->showCard();
+                }
+                ?>
+            </form>
+        </div>
+        <?php
+        if (count($_SESSION["validatedCard"]) == $limit) {
+        ?>
+            <div class='victory'>
+                <img class='victory_anim' src='../images/victory.png'>
+                <a class="btn" href="../menu.php">
+                    <h1>Retour au menu</h1>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
+        <a class="game_btn" href="../menu.php"><img src="../images/back.png" alt="retour"></a>
 </body>
 
 </html>
