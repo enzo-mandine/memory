@@ -18,7 +18,7 @@
 }
 
 .cardback:hover {
-    box-shadow: 0px 0px 21px -1px rgba(73,150,201,1);
+    box-shadow: 0px 0px 21px -1px rgba(73, 150, 201, 1);
     transform: scale(1.1);
 }
 
@@ -56,6 +56,7 @@
     background-position-y: 31%;
     background-size: 130%;
 }
+
 .victory {
     position: absolute;
     display: flex;
@@ -68,9 +69,14 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
 }
+
 @keyframes victory {
-        0% {height: 100px;}
-        100% {height: 800px;}
+    0% {
+        height: 100px;
+    }
+    100% {
+        height: 800px;
+    }
 }
 
 .victory_anim {

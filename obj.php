@@ -74,43 +74,43 @@ for ($i = 1; $i < $limit + 1; $i++) {
 <body class="gameBg">
     <div class="center">
         <form method="POST" class="grid">
-                <?php
-                // Génération du jeu
-                if (($_SESSION["gameStart"]) == 'stop') {
-                    $_SESSION["flippedCard"] = [];
-                    for ($i = 1; $i < $limit + 1; $i++) {
-                        $_SESSION["carte"][$i] = new card();
-                        $name = $i;
-                        $_SESSION["carte"][$i]->getName($name);
-                        $_SESSION["carte"][$i]->setCard();
-                    }
-                    $_SESSION["gameStart"] = 'start';
+            <?php
+            // Génération du jeu
+            if (($_SESSION["gameStart"]) == 'stop') {
+                $_SESSION["flippedCard"] = [];
+                for ($i = 1; $i < $limit + 1; $i++) {
+                    $_SESSION["carte"][$i] = new card();
+                    $name = $i;
+                    $_SESSION["carte"][$i]->getName($name);
+                    $_SESSION["carte"][$i]->setCard();
                 }
-                // Affichage des cartes mélangées
-                foreach ($_SESSION["showCard"] as $key => $value) {
-                    $_SESSION["carte"][$value]->showCard();
-                }
-                ?>
-            </form>
+                $_SESSION["gameStart"] = 'start';
+            }
+            // Affichage des cartes mélangées
+            foreach ($_SESSION["showCard"] as $key => $value) {
+                $_SESSION["carte"][$value]->showCard();
+            }
+            ?>
+        </form>
+    </div>
+    <?php
+    if (count($_SESSION["validatedCard"]) == $limit) {
+        $conn = mysqli_connect("localhost", "root", "", "memory");
+        $scoretotal = ($limit * 10000) / $_SESSION['flip'];
+        $scoreenvoyé = "INSERT INTO score VALUES (NULL,$_SESSION[id],$_SESSION[flip],$limit,$scoretotal,NOW())";
+        $sql = mysqli_query($conn, $scoreenvoyé);
+
+    ?>
+        <div class='victory'>
+            <img class='victory_anim' src='images/victory.png'>
+            <a class="btn" href="menu.php">
+                <h1>Retour au menu</h1>
+            </a>
         </div>
-        <?php
-        if (count($_SESSION["validatedCard"]) == $limit) {
-            $conn = mysqli_connect("localhost","root","","memory");
-            $scoretotal= ($limit*10000)/$_SESSION['flip'];
-            $scoreenvoyé = "INSERT INTO score VALUES (NULL,$_SESSION[id],$_SESSION[flip],$limit,$scoretotal,NOW())";
-            $sql = mysqli_query($conn,$scoreenvoyé);
-            
-        ?>
-            <div class='victory'>
-                <img class='victory_anim' src='images/victory.png'>
-                <a class="btn" href="menu.php">
-                    <h1>Retour au menu</h1>
-                </a>
-            </div>
-        <?php
-        }
-        ?>
-        <a class="game_btn" href="menu.php"><img src="images/back.png" alt="retour"></a>
+    <?php
+    }
+    ?>
+    <a class="game_btn" href="menu.php"><img src="images/back.png" alt="retour"></a>
 </body>
 
 </html>

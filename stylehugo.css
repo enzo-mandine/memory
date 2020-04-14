@@ -11,34 +11,33 @@ body {
 }
 
 h1 {
-    
     font-style: normal;
     font-weight: bold;
-} 
-
-body{
-    margin:0;
-    padding:0;
 }
-.menu{
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
-.logo{
+
+.logo {
     margin-left: 20%;
     margin-top: 5%;
     width: 60%;
-    height:15%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
- 
-
 }
-.liensmenu{
+
+.liensmenu {
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -46,30 +45,32 @@ body{
     margin-top: 15%;
     margin-left: 35%;
 }
-.liensmenu a{
+
+.liensmenu a {
     margin-top: 2%;
     margin-bottom: 1%;
     margin-left: 10%;
     width: 300px;
-    text-decoration:none;
+    text-decoration: none;
     color: black;
     height: 100%;
 }
-.liensmenu h1{
+
+.liensmenu h1 {
     margin-top: 9%;
     text-align: center;
-
 }
-.profil{
+
+.profil {
     /* background-image: url(images/background_menu.png); */
     background-size: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
-.elementprofil{
+
+.elementprofil {
     display: flex;
     flex-direction: column;
     background-position: center;
@@ -82,69 +83,62 @@ body{
     text-align: center;
     font-size: 150%;
 }
-.elementprofil h1{
+
+.elementprofil h1 {
     margin-top: -2%;
     font-size: 250%;
     color: white;
     -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: black;
 }
-.profil a{
+
+.profil a {
     margin-top: -3%;
     margin-left: 20%;
     width: fit-content;
-    text-decoration:none;
+    text-decoration: none;
     color: black;
 }
-.score{
 
+.score {
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.score a{
+
+.score a {
     margin-left: 42%;
     width: fit-content;
-    text-decoration:none;
+    text-decoration: none;
     color: black;
 }
-.scoreelement{
+
+.scoreelement {
     margin-left: 35%;
     background-color: #8196a980;
     width: fit-content;
     padding: 5%;
 }
-.connexionbg{
 
+.connexionbg {
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.inscriptionbg{
 
+.inscriptionbg {
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.connexionelement{
-    background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
-    margin-left: 35%;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    width: fit-content;
-    padding: 5%;
-    height: 75%;
-}
-.connexionelement form{
-    margin-left: -17%;
-}
-.inscriptionelement{
+
+.connexionelement {
     background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
     margin-left: 35%;
     background-repeat: no-repeat;
@@ -154,54 +148,66 @@ body{
     height: 75%;
 }
 
-.inscriptionelement form{
+.connexionelement form {
     margin-left: -17%;
 }
 
-.btn{
+.inscriptionelement {
+    background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
+    margin-left: 35%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    width: fit-content;
+    padding: 5%;
+    height: 75%;
+}
+
+.inscriptionelement form {
+    margin-left: -17%;
+}
+
+.btn {
     background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
     background-repeat: no-repeat;
     background-size: 100%;
     border-radius: 5px;
     height: 80px;
-    
 }
-.choixdiff{
+
+.choixdiff {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.elementchoixdiff{
+
+.elementchoixdiff {
     background-image: url(images/hearthstone_patch_texture_3.png_0007_or.png);
     background-repeat: no-repeat;
     background-size: 40%;
     margin-left: 33%;
     height: 40%;
 }
-.elementchoixdiff h1{
+
+.elementchoixdiff h1 {
     margin-top: 2%;
     margin-left: 7.5%;
     color: white;
 }
-.elementchoixdiff form{
+
+.elementchoixdiff form {
     margin-top: 8%;
     margin-left: 12%;
 }
-.elementchoixdiff img{
+
+.elementchoixdiff img {
     margin-top: -4%;
 }
-.buttonconn{
+
+.buttonconn {
     margin-top: 80%;
     margin-left: 25%;
 }
-
-
-
-
-
-
-
 
 .board {
     background-image: url(../src/background.jpg);
@@ -218,7 +224,7 @@ body{
 }
 
 .cardback:hover {
-    box-shadow: 0px 0px 21px -1px rgba(73,150,201,1);
+    box-shadow: 0px 0px 21px -1px rgba(73, 150, 201, 1);
     transform: scale(1.1);
 }
 
@@ -256,6 +262,7 @@ body{
     background-position-y: 31%;
     background-size: 130%;
 }
+
 .victory {
     position: absolute;
     display: flex;
@@ -268,9 +275,14 @@ body{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
 }
+
 @keyframes victory {
-        0% {height: 100px;}
-        100% {height: 800px;}
+    0% {
+        height: 100px;
+    }
+    100% {
+        height: 800px;
+    }
 }
 
 .victory_anim {
