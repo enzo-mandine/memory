@@ -20,6 +20,7 @@ if (isset($_SESSION['login']))
         $sql3 = mysqli_query($conn,$requestscore);
         $rowscore = mysqli_fetch_all($sql3);
         $nbcartes = $row42[0][3];    
+       
 
 
         echo '<h1>Bienvenue</br> grand maitre ';

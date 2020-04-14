@@ -37,7 +37,7 @@ if (isset($_POST['caca']))
     unset($_SESSION['flippedCard']);
     unset($_SESSION['validatedCard']);
     unset($_SESSION['carte']);
-    header('Location:objv2/obj.php');
+    header('Location:obj.php');
 }
 }
 else{
