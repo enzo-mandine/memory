@@ -19,7 +19,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .menu {
     background-size: cover;
     height: 100vh;
@@ -106,6 +105,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .score a {
@@ -115,11 +115,29 @@ body {
     color: black;
 }
 
+.top_scoreelement {
+    width: 33vw;
+    height: 3rem;
+    background-image: url(images/top.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.btm_scoreelement {
+    width: 33vw;
+    height: 4rem;
+    background-image: url(images/btm.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .scoreelement {
-    margin-left: 35%;
-    background-color: #8196a980;
-    width: fit-content;
-    padding: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(images/mid.png);
+    background-size: cover;
+    width: 33vw;
 }
 
 .connexionbg {
@@ -170,6 +188,7 @@ body {
     background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
     border-radius: 5px;
     height: 80px;
 }
@@ -288,4 +307,76 @@ body {
 .victory_anim {
     height: 800px;
     animation: victory 1.5s;
+}
+
+.type_texte {
+    font-family: "Ma Super Fonte";
+    text-align: center;
+    background-image: url(images/type_texte.png);
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    border: none;
+    height: 48px;
+    width: 190px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+#title_profil {
+    margin-bottom: -1rem;
+}
+
+.submit_btn {
+    margin-top: 1rem;
+    font-family: "Ma Super Fonte";
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 10.7rem;
+    height: 3.5rem;
+    background-image: url(images/boutton.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#back_score {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 30%;
+    right: 34%;
+}
+
+#wrapper_lvl{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+#wrapperform_lvl {
+    background-image: url(images/hearthstone_patch_texture_3.png_0007_or.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 15rem;
+}
+
+#form_lvl {
+    position: absolute;
+    top: 44%;
+}
+
+#back_lvl {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
+
+#titre_form_lvl {
+    color: white;
 }

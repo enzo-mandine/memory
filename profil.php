@@ -22,7 +22,7 @@ include 'header.php';
 
 
 
-            echo '<h1>Bienvenue</br> grand maitre ';
+            echo '<h1 id="title_profil">Bienvenue</br>';
             echo $row[0][1];
             echo '</h1>';
 
@@ -56,10 +56,10 @@ include 'header.php';
 
             <form action="profil.php" method="post">
                 <label> Login : </label></br>
-                <input type="text" name="login" value=<?php echo $row[0][1]; ?> /></br>
+                <input type="text" name="login" class="type_texte" value=<?php echo $row[0][1]; ?> /></br>
                 <label> Password : </label></br>
-                <input type="password" name="mdp" value= /></br>
-                <input type="submit" name="modifier" value="Modifier" />
+                <input type="password" class="type_texte" name="mdp" value= /></br>
+                <input type="submit" class="submit_btn" name="modifier" value="Modifier" />
             </form>
 
         <?php

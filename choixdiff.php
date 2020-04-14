@@ -2,28 +2,31 @@
 session_start();
 include 'header.php';
 if (isset($_SESSION['login'])) {
-    echo '<div class="choixdiff"><div class="elementchoixdiff"><a href="menu.php"><img src="images/back.png"></a>';
 ?>
-    <h1>choix de la dificultée</h1>
-    <form method="post">
-        <select name="option">
-            <?php
-            $i = 3;
-            while ($i <= 50) {
-                $ii = $i * 2;
-                echo "<option name='$i' value='$ii'>$i paires</option> ";
-                $i++;
-            }
-            ?>
-        </select>
-
-        <input type="submit" name="caca" />
-    </form>
-    </div>
+    <div id="wrapper_lvl">
+        <div id="wrapperform_lvl">
+        </div>
+        <a id="back_lvl" href="menu.php"><img src="images/back.png"></a>
+        <form method="post" id="form_lvl">
+            <h1 id="titre_form_lvl">choix de la dificultée</h1>
+            <br>
+            <br>
+            <select id="submit_lvl" name="option" class="submit_btn">
+                <?php
+                $i = 3;
+                while ($i <= 50) {
+                    $ii = $i * 2;
+                    echo "<option name='$i' value='$ii'>$i paires</option> ";
+                    $i++;
+                }
+                ?>
+            </select>
+            <input type="submit" class="submit_btn" name="dif_select" />
+        </form>
     </div>
 <?php
 
-    if (isset($_POST['caca'])) {
+    if (isset($_POST['dif_select'])) {
 
         $_SESSION['limite'] = $_POST['option'];
         var_dump($_SESSION['limite']);
