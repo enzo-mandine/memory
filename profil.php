@@ -49,8 +49,10 @@ while ($i<count($rowscore))
         if($i==1)
         {
             echo'er</p>';
+        break;
         }
         else echo 'eme</p>';
+        break;
         }
     $i++;
 
