@@ -162,6 +162,7 @@ body{
     background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
     background-repeat: no-repeat;
     background-size: 100%;
+    border-radius: 5px;
     
 }
 .choixdiff{
@@ -174,12 +175,12 @@ body{
     background-image: url(images/hearthstone_patch_texture_3.png_0007_or.png);
     background-repeat: no-repeat;
     background-size: 40%;
-    margin-left: 35%;
+    margin-left: 33%;
     height: 40%;
 }
 .elementchoixdiff h1{
     margin-top: 2%;
-    margin-left: 8%;
+    margin-left: 7.5%;
     color: white;
 }
 .elementchoixdiff form{
@@ -188,4 +189,8 @@ body{
 }
 .elementchoixdiff img{
     margin-top: -4%;
+}
+.buttonconn{
+    margin-top: 80%;
+    margin-left: 25%;
 }

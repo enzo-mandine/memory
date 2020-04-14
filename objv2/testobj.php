@@ -1,8 +1,6 @@
 <?php
-include("cardobj.php");
-session_start();
-
-// Limit a remplacer par $_SESSION["limite"]
+class game extends card {
+    public function test(){
 $limit = $_SESSION['limite'];
 $limitValue = $limit / 2;
 
@@ -64,50 +62,6 @@ for ($i = 1; $i < $limit + 1; $i++) {
         header("location:obj.php");
     }
 }
+}
+}
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="gameBg">
-    <div class="center">
-        <form action="" method="POST">
-            <input type="submit" name="newgame" value="New Game">
-            <input type="submit" class="" value="reset" name="reset">
-        </form>
-        <form method="POST" class="grid">
-            <?php
-            // Génération du jeu
-            if (($_SESSION["gameStart"]) == 'stop') {
-                $_SESSION["flippedCard"] = [];
-                for ($i = 1; $i < $limit + 1; $i++) {
-                    $_SESSION["carte"][$i] = new card();
-                    $name = $i;
-                    $_SESSION["carte"][$i]->getName($name);
-                    $_SESSION["carte"][$i]->setCard();
-                }
-                $_SESSION["gameStart"] = 'start';
-            }
-            // Affichage des cartes mélangées
-            foreach ($_SESSION["showCard"] as $key => $value) {
-                $_SESSION["carte"][$value]->showCard();
-            }
-            if (count($_SESSION["validatedCard"]) == $limit) {
-                echo "GG MEC !";
-                // sleep(3);
-                // header("location:score.php");
-            }
-            ?>
-        </form>
-    </div>
-</body>
-
-</html>

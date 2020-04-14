@@ -25,12 +25,12 @@ if (isset($_POST["envoie"])) {
 <div class='connexionbg'>
 <div class="connexionelement">
 <form class="form" action="" method="post">
-				<label for="login">Votre pseudo</label>
+				<label for="login">Votre pseudo</label></br>
 				<input class="input" type="text" name="login"/></br>
-				<label for="mdp">Votre mot de passe</label>
+				<label for="mdp">Votre mot de passe</label></br>
 				<input class="input" type="password" name="mdp"/></br>
 				<p>pas encore de compte ?<a href='inscription.php'>inscrivez vous</a></p>
-				<input class="button1" type="submit" value="Se connecter" name="envoie"/>
+				<input class="buttonconn" type="submit" value="Se connecter" name="envoie"/>
 </form>
 </div></div>
 
