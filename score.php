@@ -7,8 +7,8 @@ $sql = mysqli_query($conn, $requestscore);
 $rowscore = mysqli_fetch_all($sql);
 ?>
 <div class="score">
+<a id="back_score" href="menu.php"><img src="images/back.png"></a>
     <div class='top_scoreelement'></div>
-    <a id="back_score" href="menu.php"><img src="images/back.png"></a>
     <div class='scoreelement'>
         <?php
         $i = 1;

@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])) {
                 $i = 3;
                 while ($i <= 50) {
                     $ii = $i * 2;
-                    echo "<option name='$i' value='$ii'>$i paires</option> ";
+                    echo "<option name='$i' value='$ii'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $i paires</option> ";
                     $i++;
                 }
                 ?>

@@ -136,7 +136,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-image: url(images/mid.png);
-    background-size: cover;
+    background-size: 100%;
     width: 33vw;
 }
 
@@ -160,6 +160,7 @@ body {
     background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
     margin-left: 35%;
     background-repeat: no-repeat;
+    background-color: transparent;
     background-size: 80%;
     width: fit-content;
     padding: 5%;
@@ -168,8 +169,13 @@ body {
 
 .connexionelement form {
     margin-left: -17%;
+    background-color: transparent;
 }
-
+.connexionelement .submit_btn{
+    margin-top: 60%;
+    margin-left: 10%;
+    background-color: transparent;
+}
 .inscriptionelement {
     background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
     margin-left: 35%;
@@ -345,9 +351,7 @@ body {
 #back_score {
     width: fit-content;
     height: fit-content;
-    position: absolute;
-    top: 30%;
-    right: 34%;
+
 }
 
 #wrapper_lvl{
