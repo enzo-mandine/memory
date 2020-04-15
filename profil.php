@@ -18,14 +18,13 @@ include 'header.php';
             $requestscore = "SELECT * FROM score  ORDER BY scoretotal DESC";
             $sql3 = mysqli_query($conn, $requestscore);
             $rowscore = mysqli_fetch_all($sql3);
-            $nbcartes = $row42[0][3];
-
-
-
+            $nbcartes = 0;
+            if ($row42 != null) {
+                $nbcartes = $row42[0][3];
+            }
             echo '<h1 id="title_profil">Bienvenue</br>';
             echo $row[0][1];
             echo '</h1>';
-
         ?>
             <h2>Votre progression</h2>
             <?php
@@ -34,22 +33,26 @@ include 'header.php';
             ?>
             <h2>Meilleur score</h2>
             <?php
-            $flip = $row42[0][4];
+            if ($row42 != null) {
+                $flip = $row42[0][4];
 
-            echo '<p>' . $flip;
-            $i = 0;
+                echo '<p>' . $flip;
+                $i = 0;
 
 
-            while ($i < count($rowscore)) {
-                if ($rowscore[$i][1] == $_SESSION['id']) {
-                    echo '  ' . $i;
-                    if ($i == 1) {
-                        echo 'er</p>';
+                while ($i < count($rowscore)) {
+                    if ($rowscore[$i][1] == $_SESSION['id']) {
+                        echo '  ' . $i;
+                        if ($i == 1) {
+                            echo 'er</p>';
+                            break;
+                        } else echo 'eme</p>';
                         break;
-                    } else echo 'eme</p>';
-                    break;
+                    }
+                    $i++;
                 }
-                $i++;
+            } else {
+                echo "<p>Aucun score</p>";
             }
             ?>
             <h3>modifiez vos infos </h3>

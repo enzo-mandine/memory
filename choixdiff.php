@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])) {
                 $i = 3;
                 while ($i <= 50) {
                     $ii = $i * 2;
-                    echo "<option name='$i' value='$ii'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $i paires</option> ";
+                    echo "<option name='$i' value='$ii'>$i paires</option> ";
                     $i++;
                 }
                 ?>
@@ -29,7 +29,9 @@ if (isset($_SESSION['login'])) {
     if (isset($_POST['dif_select'])) {
 
         $_SESSION['limite'] = $_POST['option'];
+        var_dump($_POST["option"]);
         var_dump($_SESSION['limite']);
+        // die;
         unset($_SESSION['flip']);
         unset($_SESSION['gameStart']);
         unset($_SESSION['randBg']);

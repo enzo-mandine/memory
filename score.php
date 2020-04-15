@@ -17,6 +17,31 @@ $rowscore = mysqli_fetch_all($sql);
             $i++;
         }
         ?>
+                <?php
+        $i = 1;
+        while ($i < count($rowscore)) {
+            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
+            $i++;
+        }
+        ?>        <?php
+        $i = 1;
+        while ($i < count($rowscore)) {
+            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
+            $i++;
+        }
+        ?>        <?php
+        $i = 1;
+        while ($i < count($rowscore)) {
+            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
+            $i++;
+        }
+        ?>        <?php
+        $i = 1;
+        while ($i < count($rowscore)) {
+            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
+            $i++;
+        }
+        ?>
     </div>
     <div class='btm_scoreelement'></div>
 </div>

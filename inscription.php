@@ -29,15 +29,19 @@ if (isset($_POST["envoie"])) {
 }
 
 ?>
-<div class='inscriptionbg'>
-	<div class="inscriptionelement">
-		<form class="form" name="inscription" method="post" action="">
-			Pseudo <input class="input" type="text" name="login" /> <br />
-			Mot de passe <input class="input" type="password" name="mdp" /><br />
-			Confirmez votre mot de passe <input class="input" type="password" name="remdp" /><br />
-			<input class="button1" type="submit" name="envoie" value="Se connecter" />
-		</form>
-	</div>
+<div class='inscriptionbg center'>
+	<a href="menu.php"><img src="images/back.png"></a>
+	<form id="form_inscription" class="form" name="inscription" method="post" action="">
+		<label for="login">Pseudo</label>
+		<input class="type_texte" type="text" name="login" />
+		<br>
+		<label for="mdp">Mot de passe</label>
+		<input class="type_texte" type="password" name="mdp" />
+		<br>
+		<label for="remdp">Confirmez votre mot de passe</label>
+		<input class="type_texte" type="password" name="remdp" />
+		<input id="submit_inscription" class="submit_btn" type="submit" name="envoie" value="Se connecter" />
+	</form>
 </div>
 <?php
 include 'footer.php'

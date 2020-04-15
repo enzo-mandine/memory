@@ -95,22 +95,29 @@ for ($i = 1; $i < $limit + 1; $i++) {
     </div>
     <?php
     if (count($_SESSION["validatedCard"]) == $limit) {
-        $conn = mysqli_connect("localhost", "root", "", "memory");
-        $scoretotal = ($limit * 10000) / $_SESSION['flip'];
-        $scoreenvoyé = "INSERT INTO score VALUES (NULL,$_SESSION[id],$_SESSION[flip],$limit,$scoretotal,NOW())";
-        $sql = mysqli_query($conn, $scoreenvoyé);
+
 
     ?>
         <div class='victory'>
             <img class='victory_anim' src='images/victory.png'>
-            <a class="btn" href="menu.php">
+            <form action="" method="post">
+                <input type="submit" class="submit_btn" name="gameOver" value="Retour au menu" />
+            </form>
+            <!-- <a class="btn" href="menu.php">
                 <h1>Retour au menu</h1>
-            </a>
+            </a> -->
         </div>
     <?php
     }
+    if (isset($_POST["gameOver"])) {
+        $conn = mysqli_connect("localhost", "root", "", "memory");
+        $scoretotal = ($limit * 10000) / $_SESSION['flip'];
+        $scoreenvoyé = "INSERT INTO score VALUES (NULL,$_SESSION[id],$_SESSION[flip],$limit,$scoretotal,NOW())";
+        $sql = mysqli_query($conn, $scoreenvoyé);
+        header("location:index.php");
+    }
     ?>
-    <a class="game_btn" href="menu.php"><img src="images/back.png" alt="retour"></a>
+    <a id="back_game" class="game_btn" href="menu.php"><img src="images/back.png" alt="retour"></a>
 </body>
 
 </html>

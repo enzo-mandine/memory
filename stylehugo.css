@@ -19,6 +19,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .menu {
     background-size: cover;
     height: 100vh;
@@ -122,6 +123,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
 .btm_scoreelement {
     width: 33vw;
     height: 4rem;
@@ -158,24 +160,19 @@ body {
 
 .connexionelement {
     background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
-    margin-left: 35%;
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: 80%;
+    background-size: 100%;
     width: fit-content;
-    padding: 5%;
-    height: 75%;
 }
 
-.connexionelement form {
-    margin-left: -17%;
+.form {
     background-color: transparent;
+    padding: 4rem;
+    height: 50vh;
+    text-align: center;
 }
-.connexionelement .submit_btn{
-    margin-top: 60%;
-    margin-left: 10%;
-    background-color: transparent;
-}
+
 .inscriptionelement {
     background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
     margin-left: 35%;
@@ -186,8 +183,20 @@ body {
     height: 75%;
 }
 
-.inscriptionelement form {
-    margin-left: -17%;
+#form_inscription {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-image: url(images/hearthstone_patch_texture_3_0003_login.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100%;
+    align-items: center;
+}
+
+#submit_inscription {
+    margin-top: 61%;
+    transform: rotate(-3deg);
 }
 
 .btn {
@@ -197,6 +206,11 @@ body {
     background-position: center;
     border-radius: 5px;
     height: 80px;
+}
+
+#submit_connexion {
+    margin-top: 66%;
+    transform: rotate(-2deg);
 }
 
 .choixdiff {
@@ -325,7 +339,7 @@ body {
     border: none;
     height: 48px;
     width: 190px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
 }
 
@@ -345,16 +359,16 @@ body {
     background-size: cover;
     background-position: center;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    text-align-last: center;
 }
 
 #back_score {
     width: fit-content;
     height: fit-content;
-
 }
 
-#wrapper_lvl{
+#wrapper_lvl {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -383,4 +397,9 @@ body {
 
 #titre_form_lvl {
     color: white;
+}
+
+.options_txt {
+    margin-left: 1rem;
+    text-align: center;
 }
