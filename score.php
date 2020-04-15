@@ -7,42 +7,15 @@ $sql = mysqli_query($conn, $requestscore);
 $rowscore = mysqli_fetch_all($sql);
 ?>
 <div class="score">
-<a id="back_score" href="menu.php"><img src="images/back.png"></a>
+    <a id="back_score" href="index.php"><img src="images/back.png"></a>
     <div class='top_scoreelement'></div>
-    <div class='scoreelement'>
-        <?php
-        $i = 1;
-        while ($i < count($rowscore)) {
-            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
-            $i++;
-        }
-        ?>
-                <?php
-        $i = 1;
-        while ($i < count($rowscore)) {
-            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
-            $i++;
-        }
-        ?>        <?php
-        $i = 1;
-        while ($i < count($rowscore)) {
-            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
-            $i++;
-        }
-        ?>        <?php
-        $i = 1;
-        while ($i < count($rowscore)) {
-            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
-            $i++;
-        }
-        ?>        <?php
-        $i = 1;
-        while ($i < count($rowscore)) {
-            echo '<p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p>';
-            $i++;
-        }
-        ?>
-    </div>
+    <?php
+    $i = 1;
+    while ($i < count($rowscore)) {
+        echo '<div class="scoreelement"><p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p></div>';
+        $i++;
+    }
+    ?>
     <div class='btm_scoreelement'></div>
 </div>
 <?php

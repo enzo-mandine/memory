@@ -30,15 +30,15 @@ if (isset($_POST["envoie"])) {
 
 ?>
 <div class='inscriptionbg center'>
-	<a href="menu.php"><img src="images/back.png"></a>
+	<a href="index.php"><img src="images/back.png"></a>
 	<form id="form_inscription" class="form" name="inscription" method="post" action="">
-		<label for="login">Pseudo</label>
+		<label for="login">Pseudo</label><br>
 		<input class="type_texte" type="text" name="login" />
 		<br>
-		<label for="mdp">Mot de passe</label>
+		<label for="mdp">Mot de passe</label><br>
 		<input class="type_texte" type="password" name="mdp" />
 		<br>
-		<label for="remdp">Confirmez votre mot de passe</label>
+		<label for="remdp">Confirmez votre mot de passe</label><br>
 		<input class="type_texte" type="password" name="remdp" />
 		<input id="submit_inscription" class="submit_btn" type="submit" name="envoie" value="Se connecter" />
 	</form>

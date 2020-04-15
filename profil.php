@@ -5,7 +5,7 @@ include 'header.php';
 ?>
 <div class='profil'>
     <div class='elementprofil'>
-        <a href="menu.php"><img src="images/back.png"></a>
+        <a href="index.php"><img src="images/back.png"></a>
         <?php
         if (isset($_SESSION['login'])) {
             $conn = mysqli_connect("localhost", "root", "", "memory");

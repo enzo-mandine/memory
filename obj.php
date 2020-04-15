@@ -103,9 +103,6 @@ for ($i = 1; $i < $limit + 1; $i++) {
             <form action="" method="post">
                 <input type="submit" class="submit_btn" name="gameOver" value="Retour au menu" />
             </form>
-            <!-- <a class="btn" href="menu.php">
-                <h1>Retour au menu</h1>
-            </a> -->
         </div>
     <?php
     }
@@ -117,7 +114,7 @@ for ($i = 1; $i < $limit + 1; $i++) {
         header("location:index.php");
     }
     ?>
-    <a id="back_game" class="game_btn" href="menu.php"><img src="images/back.png" alt="retour"></a>
+    <a id="back_game" class="game_btn" href="index.php"><img src="images/back.png" alt="retour"></a>
 </body>
 
 </html>

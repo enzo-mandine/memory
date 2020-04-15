@@ -6,7 +6,7 @@ if (isset($_SESSION['login'])) {
     <div id="wrapper_lvl">
         <div id="wrapperform_lvl">
         </div>
-        <a id="back_lvl" href="menu.php"><img src="images/back.png"></a>
+        <a id="back_lvl" href="index.php"><img src="images/back.png"></a>
         <form method="post" id="form_lvl">
             <h1 id="titre_form_lvl">choix de la dificultée</h1>
             <br>

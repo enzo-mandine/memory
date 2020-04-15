@@ -10,6 +10,13 @@ body {
     height: 100vh;
 }
 
+#body_index {
+    font-family: "Ma Super Fonte", Helvetica, Arial, sans-serif;
+    /* background-image: url(images/background_menu.png); */
+    background-size: 100%;
+    height: 100vh;
+}
+
 h1 {
     font-style: normal;
     font-weight: bold;
@@ -102,11 +109,11 @@ body {
 
 .score {
     background-size: cover;
-    height: 100vh;
+    min-height: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding-top: 10%;
 }
 
 .score a {
@@ -136,7 +143,6 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-image: url(images/mid.png);
     background-size: 100%;
     width: 33vw;
@@ -195,12 +201,12 @@ body {
 }
 
 #submit_inscription {
-    margin-top: 61%;
+    margin-top: 29%;
     transform: rotate(-3deg);
 }
 
 .btn {
-    background-image: url(images/hearthstone_patch_texture_3.png_0000_button-1.png);
+    background-image: url(images/boutton.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -209,7 +215,7 @@ body {
 }
 
 #submit_connexion {
-    margin-top: 66%;
+    margin-top: 28%;
     transform: rotate(-2deg);
 }
 
