@@ -436,3 +436,12 @@ body {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+
+.err {
+    padding-top: 1rem;
+    color: rgb(148, 0, 0);
+}
+
+.loghref{
+    color: rgb(14, 124, 14);
+}
