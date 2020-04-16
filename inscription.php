@@ -2,6 +2,28 @@
 session_start();
 include 'header.php';
 $_SESSION["validation"] = true;
+function sql_request(string $request, bool $mdata = false, bool $sdata = false)
+{
+	$conn = mysqli_connect("localhost", "root", "", "memory");
+	$query = mysqli_query($conn, $request);
+	if ($mdata) {
+		if ($sdata) {
+			return mysqli_fetch_row($query);
+		} else {
+			return mysqli_fetch_all($query);
+		}
+	}
+	mysqli_close($conn);
+}
+function required($form)
+{
+	foreach ($form as $input) {
+		if (empty($input)) {
+			return false;
+		}
+	}
+	return true;
+}
 ?>
 <div class='inscriptionbg center'>
 	<a href="index.php"><img src="images/back.png"></a>
@@ -15,34 +37,27 @@ $_SESSION["validation"] = true;
 		<label for="remdp">Confirmez votre mot de passe</label><br>
 		<input class="type_texte" type="password" name="remdp" />
 		<input id="submit_inscription" class="submit_btn" type="submit" name="envoie" value="Se connecter" />
-		<?php
-		if (isset($_POST["envoie"])) {
-			if ($_POST["mdp"] == $_POST['remdp']) {
-				$conn     = mysqli_connect("localhost", "root", "", "memory");
-				$request  = "SELECT login FROM utilisateurs";
-				$query    = mysqli_query($conn, $request);
-				$response = mysqli_fetch_all($query);
-
-				$count = 0;
-				while ($count < count($response)) {
-					if ($response[$count][0] == $_POST["login"]) {
-						$_SESSION["validator"] = false;
-						header("location:inscription.php");
-					}
-					$count++;
-				}
-
-				if ($_SESSION["validation"]) {
-					$request = "INSERT INTO utilisateurs (`id`,`login`,`password`) VALUES (NULL,'" . $_POST["login"] . "','" . password_hash($_POST["mdp"], PASSWORD_BCRYPT) . "');";
-					mysqli_query($conn, $request);
-					header("location:connexion.php");
+	</form>
+	<?php
+	if (isset($_POST["envoie"])) {
+		if (required($_POST)) {
+			if ($_POST["mdp"] == $_POST["remdp"]) {
+				$result = sql_request("SELECT * FROM `utilisateurs` WHERE login = '" . $_POST["login"] . "'", true);
+				if (empty($result[0])) {
+					sql_request("INSERT INTO utilisateurs (`id`, `login`, `password`) VALUES (NULL, '" . htmlspecialchars($_POST["login"]) . "', '" . password_hash($_POST["mdp"], PASSWORD_DEFAULT) . "');");
+					echo "<p class='loghref'>Inscription validée</p>";
+					header("Refresh: 1;url=connexion.php");
+				} else {
+					echo '<p class="err">Pseudo déjà pris</p>';
 				}
 			} else {
-				echo "<p class='err'>Password differents</p>";
+				echo '<p class="err">Mots de passes différents</p>';
 			}
+		} else {
+			echo '<p class="err">Veuillez remplir tout les champs</p>';
 		}
-		?>
-	</form>
+	}
+	?>
 </div>
 <?php
 include 'footer.php'
