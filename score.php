@@ -28,7 +28,7 @@ $rowscore = mysqli_fetch_all($sql);
         }
         else if ($i == 3)
         {
-            echo '<div class="scoreelement"><p class="bronze"> ' . $i . 'eme   ' . $rowscore[$i][7]  .'      '. $rowscore[$i][4] . '  pts  ' . $rowscore[$i][7] . '   ' . '</p></div>';
+            echo '<div class="scoreelement"><p class="bronze"> ' . $i . 'eme   ' . $rowscore[$i][7]  .'      '. $rowscore[$i][4] . '  pts  '  . '</p></div>';
         $i++;
         }
         else

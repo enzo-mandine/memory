@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 16 avr. 2020 à 15:17
--- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Généré le :  jeu. 16 avr. 2020 à 15:26
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `score` (
   `scoretotal` float NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `score`
@@ -51,7 +51,12 @@ INSERT INTO `score` (`id`, `id_utilisateur`, `flip`, `nbrcartes`, `scoretotal`, 
 (3, 1, 10, 6, 6000, '2020-04-15'),
 (5, 1, 14, 6, 4285.71, '2020-04-15'),
 (6, 1, 10, 6, 6000, '2020-04-16'),
-(7, 1, 18, 12, 6666.67, '2020-04-16');
+(7, 1, 18, 12, 6666.67, '2020-04-16'),
+(8, 2, 20, 12, 6000, '2020-04-16'),
+(9, 2, 14, 12, 8571.43, '2020-04-16'),
+(10, 2, 12, 6, 5000, '2020-04-16'),
+(11, 2, 12, 8, 6666.67, '2020-04-16'),
+(12, 2, 20, 10, 5000, '2020-04-16');
 
 -- --------------------------------------------------------
 
@@ -65,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateurs`
@@ -73,7 +78,8 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`id`, `login`, `password`) VALUES
 (0, 'admin', '$2y$10$NCGuplPllt2NIED7obtCj.Q1QBhZTstAqudfok3NnU/QS7a.Qcc.2'),
-(1, 'enzo', '$2y$10$jQuoovUoDFJQX2HHGtXUa.uBB3dyHBA.7c4Hf.EsNFvNgc58E9Osi');
+(1, 'enzo', '$2y$10$jQuoovUoDFJQX2HHGtXUa.uBB3dyHBA.7c4Hf.EsNFvNgc58E9Osi'),
+(2, 'hugo', '$2y$10$qfaJezKvJ.dMN4pX.ENjR.BYE6v3tdatlBBe36hKYM4A2df.WXmUe');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
