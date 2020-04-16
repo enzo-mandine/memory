@@ -11,9 +11,33 @@ $rowscore = mysqli_fetch_all($sql);
     <div class='top_scoreelement'></div>
     <?php
     $i = 1;
+
+/*     echo date("d-m-Y", strtotime($rowscore[2][3]));
+    die; */
+/*     var_dump($rowscore); */
     while ($i < count($rowscore)) {
-        echo '<div class="scoreelement"><p> position :' . $i . '  score :  ' . $rowscore[$i][4] . '  utilisateurs :  ' . $rowscore[$i][7] . '  date : ' . $rowscore[$i][5] . '</p></div>';
+        if ($i == 1)
+        {
+            echo '<div class="scoreelement"><p class="gold"> ' . $i . 'er    ' . $rowscore[$i][7] .'      ' . $rowscore[$i][4] . '  pts  ' . '</p></div>';
         $i++;
+        }
+        else if ($i == 2)
+        {
+            echo '<div class="scoreelement"><p class="silver"> ' . $i . 'nd    ' . $rowscore[$i][7] .'      ' . $rowscore[$i][4] . '  pts  '  . '</p></div>';
+        $i++;
+        }
+        else if ($i == 3)
+        {
+            echo '<div class="scoreelement"><p class="bronze"> ' . $i . 'eme   ' . $rowscore[$i][7]  .'      '. $rowscore[$i][4] . '  pts  ' . $rowscore[$i][7] . '   ' . '</p></div>';
+        $i++;
+        }
+        else
+        {
+            echo '<div class="scoreelement"><p> ' . $i . 'eme    ' . $rowscore[$i][7] .'      ' . $rowscore[$i][4] . '  pts  '  .'</p></div>';
+            $i++;
+        }
+        
+        
     }
     ?>
     <div class='btm_scoreelement'></div>

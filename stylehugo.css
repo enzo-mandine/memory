@@ -409,3 +409,39 @@ body {
     margin-left: 1rem;
     text-align: center;
 }
+.gold{
+    color:    gold; 
+    font-size: 200%;
+    background: -webkit-linear-gradient(transparent, transparent),
+             -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  line-height: 2rem;
+}
+.silver{
+    color:    silver; 
+    font-size: 200%;
+    background: -webkit-linear-gradient(transparent, transparent),
+             -webkit-linear-gradient(top, silver 0%, rgb(151, 151, 151) 100%);
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  line-height: 2rem;
+}
+.bronze{
+    color: rgb(207, 121, 71); 
+    font-size: 200%;
+    background: -webkit-linear-gradient(transparent, transparent),
+             -webkit-linear-gradient(top, rgb(207, 121, 71) 0%, rgb(207, 121, 71) 100%);
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  line-height: 2rem;
+}
