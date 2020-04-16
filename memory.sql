@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 15 avr. 2020 à 22:30
+-- Généré le :  jeu. 16 avr. 2020 à 15:17
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `score` (
   `scoretotal` float NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `score`
@@ -50,7 +50,8 @@ INSERT INTO `score` (`id`, `id_utilisateur`, `flip`, `nbrcartes`, `scoretotal`, 
 (4, 1, 10, 6, 6000, '2020-04-15'),
 (3, 1, 10, 6, 6000, '2020-04-15'),
 (5, 1, 14, 6, 4285.71, '2020-04-15'),
-(6, 1, 10, 6, 6000, '2020-04-16');
+(6, 1, 10, 6, 6000, '2020-04-16'),
+(7, 1, 18, 12, 6666.67, '2020-04-16');
 
 -- --------------------------------------------------------
 

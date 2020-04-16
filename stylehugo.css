@@ -409,39 +409,30 @@ body {
     margin-left: 1rem;
     text-align: center;
 }
-.gold{
-    color:    gold; 
-    font-size: 200%;
-    background: -webkit-linear-gradient(transparent, transparent),
-             -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
-    background: -o-linear-gradient(transparent, transparent);
+
+.gold {
+    color: rgba(0, 0, 0, 0.0);
+    background: linear-gradient( -72deg, #ffde45, #f9facf 16%, #ffde45 21%, #f9facf 24%, #ffde45 36%, #f9facf 45%, #f9facf 60%, #ffde45 72%, #f9facf 80%, #ffde45 84%);
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  line-height: 2rem;
+    font-size: 250%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
-.silver{
-    color:    silver; 
-    font-size: 200%;
-    background: -webkit-linear-gradient(transparent, transparent),
-             -webkit-linear-gradient(top, silver 0%, rgb(151, 151, 151) 100%);
-    background: -o-linear-gradient(transparent, transparent);
+
+.silver {
+    color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient( -72deg, #dedede, #ffffff 16%, #dedede 21%, #ffffff 24%, #454545 27%, #dedede 36%, #ffffff 45%, #ffffff 60%, #dedede 72%, #ffffff 80%, #dedede 84%, #a1a1a1);
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  line-height: 2rem;
+    font-size: 200%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
-.bronze{
-    color: rgb(207, 121, 71); 
-    font-size: 200%;
-    background: -webkit-linear-gradient(transparent, transparent),
-             -webkit-linear-gradient(top, rgb(207, 121, 71) 0%, rgb(207, 121, 71) 100%);
-    background: -o-linear-gradient(transparent, transparent);
+
+.bronze {
+    color: rgba(0, 0, 0, 0.0);
+    background: linear-gradient( -72deg, #ca7345, #ffdeca 16%, #ca7345 21%, #ffdeca 24%, #a14521 27%, #ca7345 36%, #ffdeca 45%, #ffdeca 60%, #ca7345 72%, #ffdeca 80%, #ca7345 84%, #732100);
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  line-height: 2rem;
+    font-size: 150%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
