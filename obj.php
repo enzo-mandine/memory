@@ -107,7 +107,7 @@ for ($i = 1; $i < $limit + 1; $i++) {
     <?php
     }
     if (isset($_POST["gameOver"])) {
-        $conn = mysqli_connect("localhost", "root", "", "memory");
+        $conn = mysqli_connect("localhost:3306", "enzo-mandine", "3SG1t13R", "enzo-mandine_memory");
         $scoretotal = ($limit * 10000) / $_SESSION['flip'];
         $scoreenvoyé = "INSERT INTO score VALUES (NULL,$_SESSION[id],$_SESSION[flip],$limit,$scoretotal,NOW())";
         $sql = mysqli_query($conn, $scoreenvoyé);

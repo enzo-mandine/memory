@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'header.php';
-$conn = mysqli_connect("localhost", "root", "", "memory");
+$conn = mysqli_connect("localhost:3306", "enzo-mandine", "3SG1t13R", "enzo-mandine_memory");
 $requestscore = 'SELECT * FROM score INNER JOIN utilisateurs ON score.id_utilisateur = utilisateurs.id ORDER BY scoretotal DESC';
 $sql = mysqli_query($conn, $requestscore);
 $rowscore = mysqli_fetch_all($sql);

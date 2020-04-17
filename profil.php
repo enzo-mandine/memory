@@ -8,7 +8,7 @@ include 'header.php';
         <a href="index.php"><img src="images/back.png"></a>
         <?php
         if (isset($_SESSION['login'])) {
-            $conn = mysqli_connect("localhost", "root", "", "memory");
+            $conn = mysqli_connect("localhost:3306", "enzo-mandine", "3SG1t13R", "enzo-mandine_memory");
             $request = 'SELECT * FROM utilisateurs WHERE id = "' . $_SESSION['id'] . '" ';
             $sql = mysqli_query($conn, $request);
             $row = mysqli_fetch_all($sql);
