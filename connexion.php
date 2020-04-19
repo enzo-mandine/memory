@@ -14,7 +14,7 @@ include 'header.php';
 		<br>
 		<?php
 		if (isset($_POST["envoie"])) {
-			$conn = mysqli_connect("localhost:3306", "enzo-mandine", "3SG1t13R", "enzo-mandine_memory");
+			$conn = mysqli_connect("localhost:3306", "enzo-memory", "3SG1t13R", "enzo-mandine_memory");
 			$request = "SELECT * FROM utilisateurs WHERE login ='" . htmlspecialchars($_POST["login"]) . "'";
 			$sql = mysqli_query($conn, $request);
 			$row = mysqli_fetch_assoc($sql);

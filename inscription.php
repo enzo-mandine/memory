@@ -4,7 +4,7 @@ include 'header.php';
 $_SESSION["validation"] = true;
 function sql_request(string $request, bool $mdata = false, bool $sdata = false)
 {
-	$conn = mysqli_connect("localhost:3306", "enzo-mandine", "3SG1t13R", "enzo-mandine_memory");
+	$conn = mysqli_connect("localhost:3306", "enzo-memory", "3SG1t13R", "enzo-mandine_memory");
 	$query = mysqli_query($conn, $request);
 	if ($mdata) {
 		if ($sdata) {
